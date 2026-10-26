@@ -51,7 +51,7 @@
 請讀取 repo 內容，列出所有可用的懶人包，問我要裝哪些。
 ```
 
-AI 會讀取 `SKILL.md`（安裝入口），列出 15 個技能，讓你選擇後依序安裝。只給網址時，AI 會從 `raw.githubusercontent.com` 讀檔。
+AI 會讀取 `SKILL.md`（安裝入口），列出 16 個技能，讓你選擇後依序安裝。只給網址時，AI 會從 `raw.githubusercontent.com` 讀檔。
 
 ### 方式二：clone 到本機
 
@@ -97,6 +97,7 @@ git clone https://github.com/tedchen0814/codex-starter-packs
 | 07 | [開始你的專案](07-初始化研發工具工作模式.md) | AGENTS.md + Obsidian 駕駛艙 + GitHub repo + 開工/收工/新專案初始化 skills |
 | 08 | [用 Image Gen Skill 在 Codex 生圖](08-用Image Gen Skill在Codex生圖.md) | 新手用內建 Image Gen Skill；進階再用 API Key / CLI |
 | 09 | [用 chezmoi 同步 Codex 設定](09-用chezmoi同步Codex設定.md) | 跨電腦同步 `~/.codex/AGENTS.md` 與全域 skills |
+| 10 | [串接 Vercel](10-串接-Vercel.md) | Vercel CLI + 官方 MCP，一句話部署網頁、讀建置 log |
 
 ---
 

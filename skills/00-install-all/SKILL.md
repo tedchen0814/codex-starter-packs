@@ -23,5 +23,6 @@ description: 一次安裝所有 Codex 懶人包技能。說「全部安裝」「
 12. codex-workspace — 專案初始化
 13. codex-draw — 生圖
 14. codex-chezmoi — 同步設定
+15. codex-vercel — 串接 Vercel
 
-每完成一個報告進度，最終總表：14 項各別狀態。
+每完成一個報告進度，最終總表：15 項各別狀態。
