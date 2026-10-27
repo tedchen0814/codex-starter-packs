@@ -1,19 +1,20 @@
 ---
 name: codex-env-setup
-description: Codex 環境建置（Codex Desktop、Node.js LTS、uv；CLI 選用）。說「建置環境」「安裝開發環境」時載入。
+description: Codex 環境建置（Codex Desktop、Git、Node.js LTS、uv；CLI 選用）。說「建置環境」「安裝開發環境」時載入。
 ---
 
 # Codex 環境建置
 
 先判斷作業系統，再確認 Codex Desktop app 是否已安裝、登入。不要一開始就重裝所有工具。
 
-本 Skill 不檢查 GitHub 帳號、不執行 `gh auth status`，也不安裝 Git 或 GitHub CLI。GitHub 相關設定全部留給 `codex-github`。
+本 Skill 不檢查 GitHub 帳號、不執行 `gh auth status`，也不安裝 GitHub CLI；GitHub CLI 與登入全部留給 `codex-github`。**但 Git 是後續所有項目的前置條件，一定要有**：沒有就先說明用途（版本控制工具）並經使用者同意安裝，使用者不同意就停在這裡，不繼續其他項目。
 
 ## 步驟一：檢查
 
 Windows 使用 PowerShell：
 
 ```powershell
+git --version
 node --version
 uv --version
 ```
@@ -31,6 +32,7 @@ Node.js 需 18 以上，建議使用目前 LTS。缺少選用的 Codex CLI 不�
 ### Windows
 
 ```powershell
+winget install --id Git.Git -e   # 可能跳出系統管理員確認，要使用者自己按；裝完開新終端機
 winget install --id OpenJS.NodeJS.LTS --exact --accept-source-agreements --accept-package-agreements
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
@@ -44,7 +46,7 @@ winget install Codex -s msstore
 ### macOS
 
 ```shell
-brew install node
+brew install git node
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
@@ -63,6 +65,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 至少確認：
 
 - Codex Desktop app 能開啟並正常對話，或使用者選用的 IDE／CLI 可運作。
+- `git --version` 有正常版本輸出。
 - `node --version` 為 18 以上。
 - `uv --version` 有正常版本輸出。
 - 只有選用 CLI 時，才要求 `codex --version` 成功。
