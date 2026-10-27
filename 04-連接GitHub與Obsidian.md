@@ -1,4 +1,4 @@
-# Codex 懶人包 #02.5：連接 GitHub 與 Obsidian 第二大腦
+# Codex 懶人包 #04：連接 GitHub 與 Obsidian 第二大腦
 
 > 版本：v0.4（Codex Desktop 版）
 > 更新日期：2026-04-28
@@ -31,7 +31,7 @@
 - [ ] 已有 GitHub 帳號
 - [ ] 已有 Obsidian vault，或知道自己的筆記本在哪裡
 - [ ] 電腦有網路
-- [ ] Windows 使用者建議先完成 [基礎工具快篩](01.5-Codex必裝Skills與Plugins.md)
+- [ ] Windows 使用者建議先完成 [基礎工具快篩](02-Codex必裝Skills與Plugins.md)
 
 > [!warning]
 > 本篇不是完整 Obsidian 入門教學。若使用者還沒安裝 Obsidian 或還沒有 vault，請先自行安裝 Obsidian 並建立 vault，再回來跑本篇。
@@ -497,10 +497,10 @@ get_vault_stats
 
 ## 相關懶人包
 
-- [01.5-Codex必裝Skills與Plugins](01.5-Codex必裝Skills與Plugins.md)
-- [02-連接-GitHub](02-連接-GitHub.md)
-- [03-建立第二大腦-Obsidian](03-建立第二大腦-Obsidian.md)
-- [09-用chezmoi同步Codex設定](09-用chezmoi同步Codex設定.md)
+- [02-Codex必裝Skills與Plugins](02-Codex必裝Skills與Plugins.md)
+- [03-連接-GitHub](03-連接-GitHub.md)
+- [05-建立第二大腦-Obsidian](05-建立第二大腦-Obsidian.md)
+- [13-用chezmoi同步Codex設定](13-用chezmoi同步Codex設定.md)
 
 ---
 

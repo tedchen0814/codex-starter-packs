@@ -1,4 +1,4 @@
-# Codex 懶人包 #04.5：連接 Firebase 資料庫
+# Codex 懶人包 #08：連接 Firebase 資料庫
 
 > 版本：v0.3（Codex 版，已在 Codex Desktop 實測）
 > 更新日期：2026-05-01
@@ -17,7 +17,7 @@
 
 ### Firebase vs Supabase
 
-| 比較項目 | Supabase（#04） | Firebase（本懶人包） |
+| 比較項目 | Supabase（#07） | Firebase（本懶人包） |
 |---|---|---|
 | 資料庫類型 | SQL | NoSQL |
 | 免費專案數 | 2 個 | 無限 |

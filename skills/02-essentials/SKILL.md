@@ -11,7 +11,7 @@ description: Codex 初學者必裝 Skills 與 Plugins。說「裝基本外掛」
 ```
 
 ## 建議安裝
-- **GitHub**：優先用 Codex 的 GitHub 外掛程式 + `gh` CLI（見懶人包 02）；`@github/github-mcp-server` 在 npm 上不存在，官方 GitHub MCP 請依 GitHub 文件用遠端或獨立執行檔方式安裝
+- **GitHub**：優先用 Codex 的 GitHub 外掛程式 + `gh` CLI（見懶人包 03）；`@github/github-mcp-server` 在 npm 上不存在，官方 GitHub MCP 請依 GitHub 文件用遠端或獨立執行檔方式安裝
 - **Browser**：CLI-Anything Browser CLI（`pip install cli-anything-hub && cli-hub install browser`）或 Playwright
 - **Image Gen**：內建 `imagegen` skill（新手優先）
 - **Office 文件**：可讀取/生成 Markdown、PDF

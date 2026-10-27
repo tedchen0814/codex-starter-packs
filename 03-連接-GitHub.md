@@ -1,4 +1,4 @@
-# Codex 懶人包 #02：連接 GitHub
+# Codex 懶人包 #03：連接 GitHub
 
 > 版本：v0.3（Codex Desktop 版）
 > 更新日期：2026-04-27

@@ -72,24 +72,24 @@ description: Codex 懶人包全集 — 環境建置、MCP 串接、技能安裝�
 
 ### 編號對照（給 AI 用，**不要貼給使用者**）
 
-| 編號 | Skill 名稱 | 資料夾 |
-|---|---|---|
-| 00 | `codex-env-setup` | `skills/00-env-setup` |
-| 01 | `codex-notebooklm` | `skills/01-notebooklm` |
-| 02 | `codex-essentials` | `skills/02-essentials` |
-| 03 | `codex-github` | `skills/03-github` |
-| 04 | `codex-github-obsidian` | `skills/04-github-obsidian` |
-| 05 | `codex-obsidian` | `skills/05-obsidian` |
-| 06 | `codex-second-brain` | `skills/06-second-brain` |
-| 07 | `codex-supabase` | `skills/07-supabase` |
-| 08 | `codex-firebase` | `skills/08-firebase` |
-| 09 | `codex-ollama` | `skills/09-ollama` |
-| 10 | `codex-gemini` | `skills/10-gemini` |
-| 11 | `codex-workspace` | `skills/11-workspace` |
-| 12 | `codex-draw` | `skills/12-draw` |
-| 13 | `codex-chezmoi` | `skills/13-chezmoi` |
-| 14 | `codex-vercel` | `skills/14-vercel` |
-| 00A | `codex-install-all` | `skills/00-install-all` |
+| 編號 | Skill 名稱 | 資料夾 | 完整版說明檔（根目錄） |
+|---|---|---|---|
+| 00 | `codex-env-setup` | `skills/00-env-setup` | `00-環境建置.md` |
+| 01 | `codex-notebooklm` | `skills/01-notebooklm` | `01-連接-NotebookLM.md` |
+| 02 | `codex-essentials` | `skills/02-essentials` | `02-Codex必裝Skills與Plugins.md` |
+| 03 | `codex-github` | `skills/03-github` | `03-連接-GitHub.md` |
+| 04 | `codex-github-obsidian` | `skills/04-github-obsidian` | `04-連接GitHub與Obsidian.md` |
+| 05 | `codex-obsidian` | `skills/05-obsidian` | `05-建立第二大腦-Obsidian.md` |
+| 06 | `codex-second-brain` | `skills/06-second-brain` | `06-第二大腦設定指南.md` |
+| 07 | `codex-supabase` | `skills/07-supabase` | `07-連接-Supabase-資料庫.md` |
+| 08 | `codex-firebase` | `skills/08-firebase` | `08-連接-Firebase-資料庫.md` |
+| 09 | `codex-ollama` | `skills/09-ollama` | `09-安裝本地AI-Ollama.md` |
+| 10 | `codex-gemini` | `skills/10-gemini` | `10-設定Gemini免費API.md` |
+| 11 | `codex-workspace` | `skills/11-workspace` | `11-初始化研發工具工作模式.md` |
+| 12 | `codex-draw` | `skills/12-draw` | `12-用Image Gen Skill在Codex生圖.md` |
+| 13 | `codex-chezmoi` | `skills/13-chezmoi` | `13-用chezmoi同步Codex設定.md` |
+| 14 | `codex-vercel` | `skills/14-vercel` | `14-串接-Vercel.md` |
+| 00A | `codex-install-all` | `skills/00-install-all` | — |
 
 ## 步驟三：處理相依性
 

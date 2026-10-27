@@ -1,4 +1,4 @@
-# Codex 懶人包 #03：連接 Obsidian 第二大腦
+# Codex 懶人包 #05：連接 Obsidian 第二大腦
 
 > 版本：v0.2（Codex 版）
 > 更新日期：2026-04-26

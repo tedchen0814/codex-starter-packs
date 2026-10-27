@@ -1,4 +1,4 @@
-# Codex 懶人包 #10：串接 Vercel
+# Codex 懶人包 #14：串接 Vercel
 
 > 版本：v0.1（Codex 版）
 > 更新日期：2026-10-26
@@ -17,7 +17,7 @@
 
 ### Vercel 和 GitHub Pages 怎麼選？
 
-| 項目 | GitHub Pages（懶人包 #02） | Vercel（本懶人包） |
+| 項目 | GitHub Pages（懶人包 #03） | Vercel（本懶人包） |
 |------|---------------------------|-------------------|
 | 適合 | 純 HTML／CSS／JS 靜態網頁 | 靜態網頁，以及 Next.js、React 等需要建置的專案 |
 | repo 公開／私人 | 免費版需公開 repo | 私人 repo 也能部署 |
@@ -303,7 +303,7 @@ codex mcp remove vercel
 ## 相關連結
 
 - [懶人包 #00：環境建置](00-環境建置.md)
-- [懶人包 #02：連接 GitHub](02-連接-GitHub.md)
+- [懶人包 #03：連接 GitHub](03-連接-GitHub.md)
 - [Vercel MCP 官方文件](https://vercel.com/docs/agent-resources/vercel-mcp)
 - [Vercel CLI 官方文件](https://vercel.com/docs/cli)
 - [README｜Codex 懶人包索引](README.md)

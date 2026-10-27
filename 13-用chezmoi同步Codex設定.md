@@ -1,4 +1,4 @@
-# Codex 懶人包 #09：用 chezmoi 同步 Codex 設定與收工技能
+# Codex 懶人包 #13：用 chezmoi 同步 Codex 設定與收工技能
 
 > 版本：v0.1（Codex 版）
 > 更新日期：2026-04-26
@@ -176,7 +176,7 @@ chezmoi 只同步「安全設定」。另一台電腦仍需要自己設定：
 
 1. Codex 登入
 2. Obsidian vault 實際路徑
-3. #03 的 Obsidian MCP 或資料夾授權
+3. #05 的 Obsidian MCP 或資料夾授權
 4. GitHub 登入 / SSH / token
 
 尤其是 `~/.codex/config.toml`：

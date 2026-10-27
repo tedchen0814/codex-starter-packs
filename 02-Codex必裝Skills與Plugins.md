@@ -1,4 +1,4 @@
-# Codex 懶人包 #01.5：初學者必裝外掛程式與技能
+# Codex 懶人包 #02：初學者必裝外掛程式與技能
 
 > 版本：v0.5（Codex Desktop 版）
 > 更新日期：2026-04-28
@@ -340,7 +340,7 @@ installations: []
 repositories: []
 ```
 
-代表 Codex Desktop 的 GitHub 外掛程式還沒連上帳號。下一個懶人包用 [連接 GitHub](02-連接-GitHub.md) 解決。
+代表 Codex Desktop 的 GitHub 外掛程式還沒連上帳號。下一個懶人包用 [連接 GitHub](03-連接-GitHub.md) 解決。
 
 ---
 
@@ -357,7 +357,7 @@ MCP 和 Obsidian / MCPVault 是第二大腦主題，建議後面再做。
 
 這裡只需要知道：
 
-> 之後要讓 Codex 讀你的第二大腦，會用 [建立第二大腦](03-建立第二大腦-Obsidian.md)。本篇只先講外掛程式與技能。
+> 之後要讓 Codex 讀你的第二大腦，會用 [建立第二大腦](05-建立第二大腦-Obsidian.md)。本篇只先講外掛程式與技能。
 
 ---
 
@@ -398,9 +398,9 @@ MCP 和 Obsidian / MCPVault 是第二大腦主題，建議後面再做。
 
 ## 下一步建議
 
-1. 要發布作品：使用 Codex 懶人包 #02 連接 GitHub
-2. 要接筆記本：使用 Codex 懶人包 #03 連接 Obsidian
-3. 要做圖片素材：使用 Codex 懶人包 #08 Image Gen Skill
+1. 要發布作品：使用 Codex 懶人包 #03 連接 GitHub
+2. 要接筆記本：使用 Codex 懶人包 #05 連接 Obsidian
+3. 要做圖片素材：使用 Codex 懶人包 #12 Image Gen Skill
 ```
 
 ---

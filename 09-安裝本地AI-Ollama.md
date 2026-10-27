@@ -1,4 +1,4 @@
-# Codex 懶人包 #05：安裝本地 AI（Ollama）
+# Codex 懶人包 #09：安裝本地 AI（Ollama）
 
 > 版本：v0.1（Codex 版）
 > 更新日期：2026-04-26
@@ -39,7 +39,7 @@
 
 | 記憶體 | 建議模型 | 大小 |
 |---|---|---|
-| < 8GB | ⚠️ 改用 Gemini 免費 API（懶人包 #06） | — |
+| < 8GB | ⚠️ 改用 Gemini 免費 API（懶人包 #10） | — |
 | 8-16GB | `gemma4:e2b` | 約 5GB |
 | ≥ 16GB | `gemma4:e4b` | 約 10GB |
 
@@ -130,4 +130,4 @@ ollama rm [模型]
 ## 相關連結
 
 - [Ollama 官網](https://ollama.com)
-- [06 設定 Gemini 免費 API](06-設定Gemini免費API.md)
+- [10 設定 Gemini 免費 API](10-設定Gemini免費API.md)
