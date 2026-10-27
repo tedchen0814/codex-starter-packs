@@ -112,7 +112,7 @@ description: Codex 懶人包全集 — 環境建置、MCP 串接、技能安裝�
 1. 用白話說明這項要做什麼、會改動什麼，**等使用者同意**。
 2. 讀取對應資料夾內的 `SKILL.md`，照步驟執行；需要完整說明時，改讀 repo 根目錄同主題的 `.md` 檔（例如 `00-環境建置.md`）。
    - 已 clone 到本機：直接讀本機資料夾。
-   - 只拿到網址、沒有 clone：從 `https://raw.githubusercontent.com/tedchen0814/codex-starter-packs/main/` 加上檔案路徑讀取（例如 `.../main/skills/00-env-setup/SKILL.md`）。檔名含中文時，路徑要做 URL 編碼。這個做法**不需要先安裝 Git**，適合全新的電腦。
+   - 只拿到網址、沒有 clone：從 `https://raw.githubusercontent.com/tedchen0814/codex-starter-packs/main/` 加上檔案路徑讀取（例如 `.../main/skills/00-env-setup/SKILL.md`）。檔名含中文時，路徑要做 URL 編碼。這個做法**不需要先安裝 Git**，適合全新的電腦。讀到的中文若是亂碼（Windows PowerShell 5.1 的 `Invoke-WebRequest` 常見），改用 UTF-8 解碼重抓：`[Text.Encoding]::UTF8.GetString((Invoke-WebRequest <網址> -UseBasicParsing).RawContentStream.ToArray())`；不要根據亂碼的內容行動。
 3. 把技能檔案安裝到 `~/.codex/skills/`（Windows：`C:\Users\<使用者>\.codex\skills\`），技能資料夾名稱用上表的 Skill 名稱（例如 `codex-env-setup`）。
 4. 用白話回報結果，並說明新技能要在**下一個新對話**才會載入。
 5. 問：「要繼續下一項嗎？」使用者說不用就停。

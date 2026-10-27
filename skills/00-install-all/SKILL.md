@@ -13,7 +13,8 @@ description: Codex 懶人包狀態盤點（編號 00A）。只檢查、不安裝
 2. 唯讀檢查環境，逐項回報版本或「未安裝」：
    - `node --version`、`uv --version`、`git --version`、`gh --version`
    - `gh auth status`（只看是否登入，不要登入）。**這個結果可能是誤判**：Codex 的執行環境有時讀不到系統憑證庫，會回報「token 無效」。看到失敗時，只能寫「無法確認 GitHub 登入狀態」，並請使用者在自己的終端機執行 `gh auth status` 確認；**不要直接說 token 無效，也不要建議重新登入**。
-   - `vercel --version`（只在已安裝時檢查）
+   - `vercel.cmd --version`、`firebase.cmd --version`（Windows 上 npm 全域工具要用 `.cmd` 檢查：公司或群組原則常擋未簽章的 `.ps1`，直接打 `vercel` 會失敗，看起來像「沒裝」，其實有裝）
+   - 找不到時，不要直接寫「未安裝」；先用 `Get-Command <名稱>` 與 `.cmd` 版各查一次。仍找不到，才寫「在這個執行環境找不到（可能是 PATH 不同）」，並請使用者在自己的 PowerShell 確認。
 3. 檢查 `~/.codex/config.toml` 裡已有哪些 MCP 設定（只列名稱，不顯示任何 key、token 或網址參數）。
 4. 不要讀取 `~/.codex/auth.json` 或任何憑證檔。
 
