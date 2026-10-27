@@ -1,28 +1,37 @@
 ---
 name: codex-install-all
-description: 一次安裝所有 Codex 懶人包技能。說「全部安裝」「裝完所有 Codex 懶人包」時載入。
+description: Codex 懶人包狀態盤點（編號 00A）。只檢查、不安裝。說「盤點懶人包」「看看裝了哪些」或使用者要求「全部安裝」時載入。
 ---
 
-# 一次安裝全部（Codex 版）
+# 狀態盤點（00A，Codex 版）
 
-> 本 Skill 會包含 GitHub 與 GitHub+Obsidian。若目前只要完成基礎環境、暫不處理 GitHub 帳號，請只安裝並執行 `codex-env-setup`，不要使用「全部安裝」。
+這個技能**只檢查、不安裝、不登入、不修改任何東西**。使用者要求「全部安裝」時，不要一次裝完；改做這份盤點，再依結果建議只裝需要的項目。
 
-依序載入：
+## 步驟
 
-1. codex-env-setup — 環境建置
-2. codex-notebooklm — NotebookLM
-3. codex-essentials — 必裝 Skills
-4. codex-github — GitHub
-5. codex-github-obsidian — GitHub+Obsidian
-6. codex-obsidian — Obsidian
-7. codex-second-brain — 第二大腦
-8. codex-supabase — Supabase
-9. codex-firebase — Firebase
-10. codex-ollama — Ollama
-11. codex-gemini — Gemini
-12. codex-workspace — 專案初始化
-13. codex-draw — 生圖
-14. codex-chezmoi — 同步設定
-15. codex-vercel — 串接 Vercel
+1. 檢查 `~/.codex/skills/` 底下有哪些 `codex-` 開頭的技能資料夾，對照下面 15 項（編號 00～14）判斷「已安裝技能檔」。
+2. 唯讀檢查環境，逐項回報版本或「未安裝」：
+   - `node --version`、`uv --version`、`git --version`、`gh --version`
+   - `gh auth status`（只看是否登入，不要登入）。**這個結果可能是誤判**：Codex 的執行環境有時讀不到系統憑證庫，會回報「token 無效」。看到失敗時，只能寫「無法確認 GitHub 登入狀態」，並請使用者在自己的終端機執行 `gh auth status` 確認；**不要直接說 token 無效，也不要建議重新登入**。
+   - `vercel --version`（只在已安裝時檢查）
+3. 檢查 `~/.codex/config.toml` 裡已有哪些 MCP 設定（只列名稱，不顯示任何 key、token 或網址參數）。
+4. 不要讀取 `~/.codex/auth.json` 或任何憑證檔。
 
-每完成一個報告進度，最終總表：15 項各別狀態。
+## 回報格式
+
+用白話整理成一張表，每一項標示：
+
+| 編號 | 項目 | 狀態 |
+|---|---|---|
+| 00 | 環境準備 | ✅ 已完成／⚠️ 缺 xxx／⬜ 尚未開始 |
+| …（其餘依序列出 01～14）| | |
+
+狀態只用：✅ 已完成、⚠️ 部分完成（說明缺什麼）、⬜ 尚未開始、➖ 不適用。
+
+## 建議
+
+依盤點結果，**最多推薦兩項**下一步，並說明理由。其餘項目一律說「有需要再裝」。最後問：「要先裝哪一項？」得到回答前，不安裝任何東西。
+
+## 項目對照（00～14）
+
+00 codex-env-setup、01 codex-notebooklm、02 codex-essentials、03 codex-github、04 codex-github-obsidian、05 codex-obsidian、06 codex-second-brain、07 codex-supabase、08 codex-firebase、09 codex-ollama、10 codex-gemini、11 codex-workspace、12 codex-draw、13 codex-chezmoi、14 codex-vercel
