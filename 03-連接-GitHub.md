@@ -331,7 +331,8 @@ Hello！GitHub 連接成功！
 如果要刪除 GitHub 上的測試 repo：
 
 ```powershell
-gh repo delete github-test --yes
+gh auth refresh -s delete_repo   # 第一次刪 repo 前需要補這個權限（會開瀏覽器，請使用者授權）
+gh repo delete <帳號>/github-test --yes
 ```
 
 如果要刪除本機測試資料夾：

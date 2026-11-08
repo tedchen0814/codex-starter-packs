@@ -5,7 +5,7 @@ description: Codex 連接 NotebookLM MCP。說「連接 NotebookLM」時載入�
 
 # 連接 NotebookLM（Codex 版）
 
-1. 檢查 `uv --version`，再執行 `uv tool install notebooklm-mcp-cli`；已安裝則用 `uv tool upgrade notebooklm-mcp-cli`
+1. 檢查 `uv --version`，再執行 `uv tool install notebooklm-mcp-cli`；已安裝則用 `uv tool upgrade notebooklm-mcp-cli`。若出現 `Missing expected target directory for Python minor version link`，是 uv 的 Python 捷徑損壞：取得同意後用 `cmd /c rmdir` 刪掉 `%APPDATA%Vpython` 底下壞掉的捷徑，再加 `--python 3.12` 重裝
 2. 驗證 `nlm --version` 與 `Get-Command nlm, notebooklm-mcp`
 3. `nlm login`，再用 `nlm login --check` 驗證
 4. 註冊 MCP：`codex mcp add notebooklm -- notebooklm-mcp`

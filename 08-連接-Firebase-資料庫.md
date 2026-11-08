@@ -258,6 +258,8 @@ npx.cmd -y firebase-tools@latest login
 | 專案數 | **無限** |
 | 閒置暫停 | **不會** |
 
+> ⚠️ **費用與清理**：Spark（免費）方案不需綁信用卡；升級 Blaze（用多少付多少）才會產生費用。測試用的專案若不再需要，到 Firebase Console → 專案設定 → 刪除專案（約 30 天內可復原）。**`projects:list` 只列出專案，不會建立任何東西。**
+
 ---
 
 ## 安全

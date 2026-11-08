@@ -205,7 +205,8 @@ GitHub 測試成功。這個 codex-github-test repo 要保留，還是刪除？
 若要刪除 GitHub repo：
 
 ```powershell
-gh repo delete codex-github-test --yes
+gh auth refresh -s delete_repo   # 第一次刪 repo 前需要補這個權限（會開瀏覽器，請使用者授權）
+gh repo delete <帳號>/codex-github-test --yes
 ```
 
 若要刪除本機測試資料夾：

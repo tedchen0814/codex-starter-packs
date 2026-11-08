@@ -166,19 +166,23 @@ codex mcp list
 
 1. 在使用者的文件資料夾下建立臨時資料夾 `vercel-test`
 2. 建立 `index.html`，內容為「Hello！Vercel 連接成功！」
-3. 在 `vercel-test` 資料夾內執行預覽部署：
+3. 在 `vercel-test` 資料夾內執行部署：
 
 ```bash
 vercel --yes
 ```
 
-> `--yes` 會用預設值建立專案（專案名稱 `vercel-test`）。完成後終端機會顯示一個 **Preview** 網址。
+> `--yes` 會用預設值建立專案（專案名稱 `vercel-test`）。
+> ⚠️ **第一次部署新專案會直接當成正式（Production）環境**，不會先產生預覽網址（實測如此）。之後的 `vercel` 才是預覽、`vercel --prod` 才更新正式網址。
+> 帳號有團隊（team）或多個 scope 時，用 `--scope <名稱>` 指定，以免建到不想要的地方。
 
-4. 再部署到正式環境：
+4. 若第 3 步已直接上正式，這一步可跳過；否則再部署到正式環境：
 
 ```bash
 vercel --prod --yes
 ```
+
+> 新專案預設開啟 Deployment Protection（Vercel 驗證），網址可能要登入 Vercel 才打得開，這是正常的。
 
 5. 把 **Production** 網址（`https://vercel-test-xxx.vercel.app` 或 `https://vercel-test.vercel.app`）告知使用者
 
@@ -218,10 +222,12 @@ vercel git connect
 
 > 🖐️ **詢問使用者**：「測試成功了！要保留 `vercel-test` 專案還是刪除？」
 
-如果要刪除（會詢問確認，請使用者同意後再回答 yes）：
+如果要刪除（刪除前先向使用者確認專案名稱與所屬 scope，且無法復原）：
 ```bash
-vercel project rm vercel-test
+vercel project rm vercel-test --scope <scope名稱> --confirm-name vercel-test
 ```
+
+> `vercel project rm` **不接受 `--yes`**，非互動環境要用 `--confirm-name <專案名稱>` 確認。刪之前先用 `vercel project ls --scope <scope名稱>` 看清楚，只刪 `vercel-test`，不動其他專案。
 
 並刪除本地的 `vercel-test` 資料夾。
 

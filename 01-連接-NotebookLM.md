@@ -68,6 +68,11 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv tool install notebooklm-mcp-cli
 ```
 
+> 若安裝時出現 `Missing expected target directory for Python minor version link`，是 uv 的 Python 捷徑（junction）損壞，與 NotebookLM 無關。處理：
+> 1. 先向使用者說明，取得同意。
+> 2. 用 `cmd /c rmdir` 刪掉 `%APPDATA%\uv\python` 底下損壞的捷徑（不要用一般刪除，避免連目標一起刪）。
+> 3. 加上 `--python 3.12` 重裝：`uv tool install --python 3.12 notebooklm-mcp-cli`。
+
 確認：
 ```powershell
 nlm --version
