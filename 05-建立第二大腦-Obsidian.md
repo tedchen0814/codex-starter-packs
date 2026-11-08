@@ -254,7 +254,7 @@ winget install --id OpenJS.NodeJS
 ### 4B-2. 安裝 mcpvault
 
 ```powershell
-npm.cmd install -g @bitbonsai/mcpvault
+$env:NPM_CONFIG_PREFIX="$env:USERPROFILE\.npm-global"; npm.cmd install -g @bitbonsai/mcpvault
 ```
 
 確認 mcpvault 路徑：
@@ -266,7 +266,7 @@ where.exe mcpvault
 常見結果：
 
 ```text
-C:\Users\<使用者>\AppData\Roaming\npm\mcpvault.cmd
+C:\Users\<使用者>\.npm-global\mcpvault.cmd
 ```
 
 ### 4B-3. 註冊 MCP 到 Codex
@@ -287,7 +287,7 @@ macOS / Linux：
 
 ```toml
 [mcp_servers.obsidian]
-command = "C:\\Users\\<使用者>\\AppData\\Roaming\\npm\\mcpvault.cmd"
+command = "C:\\Users\\<使用者>\\.npm-global\\mcpvault.cmd"
 args = ["<VAULT_PATH>"]
 ```
 
@@ -295,7 +295,7 @@ Windows 範例：
 
 ```toml
 [mcp_servers.obsidian]
-command = "C:\\Users\\<你的帳號>\\AppData\\Roaming\\npm\\mcpvault.cmd"
+command = "C:\\Users\\<你的帳號>\\.npm-global\\mcpvault.cmd"
 args = ["C:\\Users\\<你的帳號>\\OneDrive\\文件\\Secondbrain"]
 ```
 
@@ -317,7 +317,7 @@ Windows PowerShell：
 
 ```powershell
 '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' |
-  & "C:\Users\<使用者>\AppData\Roaming\npm\mcpvault.cmd" "<VAULT_PATH>"
+  & "C:\Users\<使用者>\.npm-global\mcpvault.cmd" "<VAULT_PATH>"
 ```
 
 如果成功，會看到 `read_note`、`write_note`、`search_notes`、`get_vault_stats` 等工具。
@@ -418,7 +418,7 @@ Windows PowerShell：
 
 ```toml
 [mcp_servers.obsidian]
-command = "C:\\Users\\<你的帳號>\\AppData\\Roaming\\npm\\mcpvault.cmd"
+command = "C:\\Users\\<你的帳號>\\.npm-global\\mcpvault.cmd"
 args = ["C:\\Users\\<你的帳號>\\OneDrive\\文件\\Secondbrain"]
 startup_timeout_sec = 20
 tool_timeout_sec = 60
@@ -450,7 +450,7 @@ PowerShell 會優先叫到 `npm.ps1` / `npx.ps1`，但系統執行原則不允�
 ```powershell
 npm.cmd --version
 npx.cmd --version
-npm.cmd install -g @bitbonsai/mcpvault
+$env:NPM_CONFIG_PREFIX="$env:USERPROFILE\.npm-global"; npm.cmd install -g @bitbonsai/mcpvault
 ```
 
 不要急著改 Windows Execution Policy；先用 `.cmd` 通常就能解。
@@ -475,13 +475,13 @@ npm error path C:\Users\<使用者>\AppData\Local\npm-cache\_cacache\tmp
 2. 改成先全域安裝：
 
 ```powershell
-npm.cmd install -g @bitbonsai/mcpvault
+$env:NPM_CONFIG_PREFIX="$env:USERPROFILE\.npm-global"; npm.cmd install -g @bitbonsai/mcpvault
 ```
 
 然後在 `config.toml` 使用完整路徑：
 
 ```toml
-command = "C:\\Users\\<使用者>\\AppData\\Roaming\\npm\\mcpvault.cmd"
+command = "C:\\Users\\<使用者>\\.npm-global\\mcpvault.cmd"
 ```
 
 ### 踩坑 3：中文路徑經 PowerShell 管線送 JSON 時變成 `??`
@@ -515,7 +515,7 @@ INFO: Could not find files for the given pattern(s).
 `mcpvault.cmd` 安裝在使用者全域 npm 目錄：
 
 ```text
-C:\Users\<使用者>\AppData\Roaming\npm\mcpvault.cmd
+C:\Users\<使用者>\.npm-global\mcpvault.cmd
 ```
 
 但該目錄不一定在目前 shell / sandbox 的 PATH 裡。
@@ -529,14 +529,14 @@ C:\Users\<使用者>\AppData\Roaming\npm\mcpvault.cmd
 錯誤寫法：
 
 ```powershell
-'{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | "C:\Users\<使用者>\AppData\Roaming\npm\mcpvault.cmd" "<VAULT_PATH>"
+'{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | "C:\Users\<使用者>\.npm-global\mcpvault.cmd" "<VAULT_PATH>"
 ```
 
 正確寫法：
 
 ```powershell
 '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' |
-  & "C:\Users\<使用者>\AppData\Roaming\npm\mcpvault.cmd" "<VAULT_PATH>"
+  & "C:\Users\<使用者>\.npm-global\mcpvault.cmd" "<VAULT_PATH>"
 ```
 
 ### 踩坑 6：改完 `config.toml` 後，當前 Codex 對話不會立刻出現新 MCP 工具

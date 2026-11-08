@@ -309,7 +309,7 @@ npm.cmd --version
 Windows PowerShell 建議用 `npm.cmd`，避免 PowerShell 執行原則擋到 `npm.ps1`。
 
 ```powershell
-npm.cmd install -g @bitbonsai/mcpvault
+$env:NPM_CONFIG_PREFIX="$env:USERPROFILE\.npm-global"; npm.cmd install -g @bitbonsai/mcpvault
 ```
 
 確認安裝位置：
@@ -321,7 +321,7 @@ where.exe mcpvault
 常見位置：
 
 ```text
-C:\Users\<你>\AppData\Roaming\npm\mcpvault.cmd
+C:\Users\<你>\.npm-global\mcpvault.cmd
 ```
 
 把這個完整路徑記成：
@@ -362,7 +362,7 @@ Windows 範例：
 
 ```toml
 [mcp_servers.obsidian]
-command = "C:\\Users\\<你的帳號>\\AppData\\Roaming\\npm\\mcpvault.cmd"
+command = "C:\\Users\\<你的帳號>\\.npm-global\\mcpvault.cmd"
 args = ["C:\\Users\\<你的帳號>\\OneDrive\\文件\\Secondbrain"]
 startup_timeout_sec = 20
 tool_timeout_sec = 60
@@ -474,8 +474,8 @@ get_vault_stats
 | Git 全域姓名 / email 是空的 | 只安裝 Git 不會自動建立 commit 作者資訊 | 用 `git config --global user.name` 與 `git config --global user.email` 補上；不想公開信箱可用 GitHub no-reply email |
 | `npm.ps1` 被擋 | PowerShell 執行原則 | 改用 `npm.cmd` |
 | `npm.cmd install -g @bitbonsai/mcpvault` 出現 `EPERM` 或無法寫入 npm cache | Codex 沙盒沒有權限寫入 `AppData\Local\npm-cache` 或全域 npm 目錄 | 改用已授權 / 提權模式重跑同一個 npm 安裝指令 |
-| `where mcpvault` 找不到 | npm 全域路徑不在 PATH | 到 `AppData\Roaming\npm` 找完整路徑 |
-| mcpvault 已安裝但 `where.exe mcpvault` 仍找不到 | 目前的 Codex / PowerShell 程序還沒刷新 PATH | 用 `npm.cmd prefix -g` 找全域路徑，直接使用 `C:\Users\<你>\AppData\Roaming\npm\mcpvault.cmd` 測試 |
+| `where mcpvault` 找不到 | npm 全域路徑不在 PATH | 到 `%USERPROFILE%\.npm-global` 找完整路徑（Codex Desktop 是 MSIX，不要裝在 AppData，見 00 環境建置） |
+| mcpvault 已安裝但 `where.exe mcpvault` 仍找不到 | 目前的 Codex / PowerShell 程序還沒刷新 PATH | 用 `npm.cmd prefix -g` 找全域路徑（應為 `.npm-global`），直接使用 `C:\Users\<你>\.npm-global\mcpvault.cmd` 測試 |
 | TOML 路徑失敗 | Windows 反斜線沒跳脫 | 使用 `C:\\Users\\...` |
 | TOML 或終端機顯示 `文件` 變成亂碼 | 終端機編碼顯示問題，不一定代表檔案路徑真的壞掉 | 以實際 mcpvault 測試結果為準；若 `tools/list` 能回傳工具清單，代表路徑可用 |
 | 改完 config 後工具沒出現 | Codex 尚未重啟 | 完全關閉再開 Codex |

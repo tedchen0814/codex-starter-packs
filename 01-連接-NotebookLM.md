@@ -73,6 +73,12 @@ uv tool install notebooklm-mcp-cli
 > 2. 用 `cmd /c rmdir` 刪掉 `%APPDATA%\uv\python` 底下損壞的捷徑（不要用一般刪除，避免連目標一起刪）。
 > 3. 加上 `--python 3.12` 重裝：`uv tool install --python 3.12 notebooklm-mcp-cli`。
 
+> ⚠️ **Windows + Codex Desktop（MSIX）**：uv 的 tools 與 Python 若裝進 `%APPDATA%` 會被導向，一般終端機會報 `uv trampoline failed to canonicalize script path`。請改成（只對這次指令生效）：
+> ```powershell
+> $env:UV_TOOL_DIR="$env:USERPROFILE\.uv-data\tools"; $env:UV_PYTHON_INSTALL_DIR="$env:USERPROFILE\.uv-data\python"; uv tool install --python 3.12 notebooklm-mcp-cli
+> ```
+> 註冊 MCP 時 `command` 寫執行檔完整路徑。詳見 [#00 環境建置](00-環境建置.md)。
+
 確認：
 ```powershell
 nlm --version

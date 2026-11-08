@@ -93,6 +93,13 @@ npm i -g vercel@latest
 vercel --version
 ```
 
+**Windows（Codex Desktop）**：Codex Desktop 是 MSIX 程式，全域安裝要避開 `%APPDATA%`（詳見 [#00 環境建置](00-環境建置.md) 的「全域工具要裝在哪」）：
+```powershell
+$env:NPM_CONFIG_PREFIX="$env:USERPROFILE\.npm-global"; npm.cmd i -g vercel@latest
+& "$env:USERPROFILE\.npm-global\vercel.cmd" --version
+```
+> 之後的 `vercel` 指令改寫完整路徑 `%USERPROFILE%\.npm-global\vercel.cmd`，或把該資料夾加入 PATH。
+
 > 若 Windows 出現權限錯誤，改用系統管理員身分開啟 Codex 再試，或確認 npm 全域路徑已加入 PATH。
 
 ---
